@@ -1,5 +1,7 @@
 package com.niit.daoimpl;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,4 +21,24 @@ public void saveproduct(Product product)
 	sessionFactory.getCurrentSession().save(product);
 
 }
+public Product getProductById(int productId)
+{
+	return sessionFactory.getCurrentSession().get(Product.class,productId);
+
+}
+
+@SuppressWarnings("unchecked")
+public List<Product> getAllProducts() {
+	return sessionFactory.getCurrentSession().createQuery("from Product").list();
+
+	
+}
+public void deleteProduct(Integer productId)
+{
+	sessionFactory.getCurrentSession().delete(getProductById(productId));
+	
+	
+}
+
+
 }

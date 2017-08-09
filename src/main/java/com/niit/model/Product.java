@@ -8,33 +8,41 @@ import javax.persistence.Id;
 @Entity
 public class Product {
 	@Id
-	@GeneratedValue (strategy=GenerationType.SEQUENCE)
-	private String id;
-	private String name;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int pid;
+	private String pname;
 	private String stock;
 	private String price;
-	
-	public void setId(String id) {
-		this.id = id;
+
+	public int getPid() {
+		return pid;
 	}
-	public String getName() {
-		return name;
+
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public String getPname() {
+		return pname;
 	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
 	public String getStock() {
 		return stock;
 	}
+
 	public void setStock(String stock) {
 		this.stock = stock;
 	}
+
 	public String getPrice() {
 		return price;
 	}
+
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	
 }
-
