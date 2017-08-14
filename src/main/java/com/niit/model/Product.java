@@ -13,7 +13,7 @@ public class Product {
 	private String pname;
 	private String stock;
 	private String price;
-
+    private String brandname;
 	public int getPid() {
 		return pid;
 	}
@@ -44,5 +44,13 @@ public class Product {
 
 	public void setPrice(String price) {
 		this.price = price;
+	}
+
+	public String getBrandname() {
+		return brandname;
+	}
+
+	public void setBrandname(String brandname) {
+		this.brandname = brandname;
 	}
 }

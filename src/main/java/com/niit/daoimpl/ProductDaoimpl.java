@@ -12,33 +12,33 @@ import com.niit.model.Product;
 
 @Repository
 @Transactional
-public class ProductDaoimpl implements ProductDao{
-@Autowired
-SessionFactory sessionFactory;
+public class ProductDaoimpl implements ProductDao {
+	@Autowired
+	SessionFactory sessionFactory;
 
-public void saveproduct(Product product)
-{
-	sessionFactory.getCurrentSession().save(product);
+	public void saveProduct(Product product) {
+		sessionFactory.getCurrentSession().save(product);
 
-}
-public Product getProductById(int productId)
-{
-	return sessionFactory.getCurrentSession().get(Product.class,productId);
+	}
 
-}
+	public Product getProductById(int productId) {
+		return sessionFactory.getCurrentSession().get(Product.class, productId);
 
-@SuppressWarnings("unchecked")
-public List<Product> getAllProducts() {
-	return sessionFactory.getCurrentSession().createQuery("from Product").list();
+	}
 
-	
-}
-public void deleteProduct(Integer productId)
-{
-	sessionFactory.getCurrentSession().delete(getProductById(productId));
-	
-	
-}
+	@SuppressWarnings("unchecked")
+	public List<Product> getAllProducts() {
+		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 
+	}
+
+	public void deleteProduct(int productId) {
+		sessionFactory.getCurrentSession().delete(getProductById(productId));
+
+	}
+
+	public void updateProduct(Product product) {
+		sessionFactory.getCurrentSession().update(product);
+	}
 
 }

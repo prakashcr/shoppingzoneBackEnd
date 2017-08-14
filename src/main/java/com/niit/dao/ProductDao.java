@@ -5,10 +5,14 @@ import java.util.List;
 import com.niit.model.Product;
 
 public interface ProductDao {
-	public void saveproduct(Product product);
+	public void saveProduct(Product product);
+
 	public Product getProductById(int productId);
-	public void deleteProduct(Integer productId);
+
+	public void deleteProduct(int productId);
+
 	public List<Product> getAllProducts();
-	
-		
-	}
+
+	public void updateProduct(Product product);
+
+}
