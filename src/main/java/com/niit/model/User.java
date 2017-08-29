@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 
@@ -12,9 +15,13 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int userId;
+	@Size(min=4)
 	private String userName;
+	@Size(min=4,max=10)
 	private String password;
+	@NotEmpty
 	private String emailid;
+	@NotEmpty
 	private String address;
 	private String Role;
 

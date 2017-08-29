@@ -2,16 +2,14 @@ package com.niit.model;
 
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,8 +25,11 @@ public class Product {
 	private int pid;
 	@Size(min=3)
 	private String pname;
+	@NotEmpty
 	private String price;
+	@NotEmpty
 	private String brandname;
+	@NotEmpty
 	private String stock;
 	
 	@ManyToOne
