@@ -9,14 +9,12 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Component
-@Table(name = "Category")
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-
 	private int cid;
 	private String catname;
+
 	/*
 	 * @OneToMany(mappedBy="category") private List<Product> product;
 	 * 
@@ -24,11 +22,12 @@ public class Category {
 	 * 
 	 * public void setProduct(List<Product> product) { this.product = product; }
 	 */
-
+	
 	public int getCid() {
 		return cid;
 	}
 
+	
 	public void setCid(int cid) {
 		this.cid = cid;
 	}

@@ -4,13 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.stereotype.Component;
 
 
 
 @Entity
+@Component
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -24,6 +27,16 @@ public class User {
 	@NotEmpty
 	private String address;
 	private String Role;
+	@OneToOne
+	private Cart cart;
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 
 	public String getRole() {
 		return Role;

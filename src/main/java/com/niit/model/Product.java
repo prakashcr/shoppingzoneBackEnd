@@ -1,6 +1,7 @@
 package com.niit.model;
 
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,10 +24,10 @@ public class Product {
 	@GeneratedValue (strategy=GenerationType.SEQUENCE)
 	
 	private int pid;
-	@Size(min=3)
+	@Size(min=2)
 	private String pname;
-	@NotEmpty
-	private String price;
+	@NotNull
+	private int price;
 	@NotEmpty
 	private String brandname;
 	@NotEmpty
@@ -68,11 +69,11 @@ public class Product {
 		this.pname = pname;
 	}
 	
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 	
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	
@@ -92,6 +93,7 @@ public class Product {
 	public void setStock(String stock) {
 		this.stock = stock;
 	}
+	
 }
 	
 	

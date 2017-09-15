@@ -8,7 +8,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.ProductDao;
+import com.niit.model.Cart;
+import com.niit.model.CartItem;
 import com.niit.model.Product;
+import com.niit.model.User;
 
 @Repository
 @Transactional
@@ -41,4 +44,7 @@ public class ProductDaoimpl implements ProductDao {
 		sessionFactory.getCurrentSession().update(product);
 	}
 
+
+	
 }
+
