@@ -28,8 +28,12 @@ import com.niit.model.User;
 				System.out.println(e.getMessage());
 			}
 		}
-		public void getUserById() {
+		
+		public User  getUserByUsername(String username) {
 			
+		User user= (User) sessionFactory.getCurrentSession().createQuery("FROM User WHERE username = '"+username+"'").uniqueResult();
+
 			
+			return user;
 		}
 	}
