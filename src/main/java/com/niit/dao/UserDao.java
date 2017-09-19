@@ -4,5 +4,6 @@ import com.niit.model.User;
 
 public interface UserDao {
 	public void saveUser(User user);
-	public void getUserById();
+
+	public User getUserByUsername(String username);
 }
