@@ -10,4 +10,5 @@ public interface CartDao {
 	    // Cart validate(int cartId) throws IOException;
 		   public void saveCart(Cart cart);
 		   List<Cart> getCartByUsername (String username);
+		
 }

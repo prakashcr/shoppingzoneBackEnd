@@ -1,27 +1,46 @@
 package com.niit.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Component;
+
 @Entity
-public class BillingAddress {
+@Component
+public class BillingAddress implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3638428486607278496L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int billingaddressid;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int billingid;
 	private String line1;
-	private String line2;
+	private String city;
 	private String state;
 	private String country;
 	private String pincode;
+	
+	
 
-	public int getBillingaddressid() {
-		return billingaddressid;
+	public String getCity() {
+		return city;
 	}
 
-	public void setBillingaddressid(int billingaddressid) {
-		this.billingaddressid = billingaddressid;
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public int getBillingid() {
+		return billingid;
+	}
+
+	public void setBillingid(int billingid) {
+		this.billingid = billingid;
 	}
 
 	public String getLine1() {
@@ -32,13 +51,7 @@ public class BillingAddress {
 		this.line1 = line1;
 	}
 
-	public String getLine2() {
-		return line2;
-	}
-
-	public void setLine2(String line2) {
-		this.line2 = line2;
-	}
+	
 
 	public String getState() {
 		return state;
